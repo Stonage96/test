@@ -21,6 +21,33 @@
             display: flex; 
             justify-content: end;
         }
+
+        .header-top .support, .navbar .left-side .category-button {
+            display: inline-block;
+            position: relative;
+        }
+
+        .header-top .support-detail .navbar .left-side .category-detail {
+            top: 20px;
+            left: -100px;
+            z-index: 1;
+        }
+
+        .navbar .left-side .category-detail {
+            width: 300px;
+            top: 50px;
+            left: -30px;
+        }
+
+        .navbar .left-side .category-detail ul {
+            list-style: none;
+        }
+
+        .navbar .left-side .category-detail li {
+            font-size: 14px;
+            margin: 0px;
+        }
+
         .header {
             display: flex;
             justify-content: space-between;
@@ -87,6 +114,7 @@
             height: inherit;
             line-height: 80px;
         }
+
         
         .navbar .center-side ul {
             list-style: none;
@@ -107,6 +135,10 @@
             color: #9A30AE;
         }
 
+        .dropdown:hover > div.dropdown-menu { 
+            display:block; margin:0; 
+        }
+
     </style>
 </head>
 <body style="width:1500px; margin: auto; margin-top: 50px;">
@@ -117,7 +149,16 @@
             <ul>
                 <li><a href="join.html">회원가입</a>&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;</li>
                 <li><a href="join.html">로그인</a>&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;</li>
-                <li><a href="support.html">고객센터 <i class="fa-solid fa-chevron-down"></i></a></li>
+                <li><div class="dropdown support">
+                        고객센터<i class="fa-solid fa-chevron-down"></i>
+                        <div class="dropdown-menu support-detail">
+                        <a class="dropdown-item" href="#">공지사항</a>
+                        <a class="dropdown-item" href="#">자주하는 질문</a>
+                        <a class="dropdown-item" href="#">1:1문의</a>
+                        <a class="dropdown-item" href="#">대량주문 문의</a>
+                        </div>
+                    </div>
+                </li>
 
             </ul>
         </div>
@@ -145,7 +186,27 @@
             <div class="col-sm-8 navbar">
                 <div class="left-side">
                     <i class="fa-solid fa-bars"></i>&nbsp;&nbsp;
-                    <span>카테고리</span>
+                    <div class="dropdown category-button">
+                        카테고리
+                        <div class="dropdown-menu category-detail">
+                            <ul>
+                                <li><a href="newItems.html">채소</a></li>
+                                <li><a href="bestItems.html">과일・견과・쌀</a></li>
+                                <li><a href="event.html">수산・해산물・건어물</a></li>
+                                <li><a href="event.html">정육・계란</a></li>
+                                <li><a href="event.html">국・반찬・메인요리</a></li>
+                                <li><a href="event.html">샐러드・간편식</a></li>
+                                <li><a href="event.html">면・양념・오일</a></li>
+                                <li><a href="event.html">생선・음료・우유・커피</a></li>
+                                <li><a href="event.html">간식・과자・떡</a></li>
+                                <li><a href="event.html">베이커리・치즈・델리</a></li>
+                                <li><a href="event.html">건강식품</a></li>
+                                <li><a href="event.html">와인</a></li>
+                                <li><a href="event.html">전통주</a></li>
+                                <li><a href="event.html">생활용품・리빙・캠핑</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 <div class="center-side">
                     <ul>
