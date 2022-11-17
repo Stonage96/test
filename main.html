@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collabee</title>
+
+    <script src="https://kit.fontawesome.com/ae242928e2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+
+        .header-top a, .navbar a{
+            color: black;
+        }
+        .header-top {
+            display: flex; 
+            justify-content: end;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            height: 63px;
+            line-height: 63px;
+        }
+
+        .header .input-box{
+            height: 48px;
+            width: 400px;
+            border-radius: 5px;
+            border: 1px solid #9A30AE;
+            padding-left: 15px;
+            line-height: 48px;
+            position: relative;
+            top: 8px;
+        }
+
+        .header .input-box input{
+            height: 25px;
+            width: 300px;
+            font-size: 16px;
+            position: relative;
+            border: none;
+        }
+
+        .header .input-box i {
+            position: relative;
+            left: 40px;
+            font-size: 20px;
+            color: #9A30AE;
+        }
+
+        .header .main-logo {
+            width: 140px;
+            height: 60px;
+        }
+
+        .header ul {
+            width: 180px;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            font-size: 25px;
+        }
+
+        .header button {
+            background-color: transparent;
+            border: none;
+            
+        }
+
+        .header-top ul{
+            font-size: 13px;
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar {
+            height: 80px;
+        }
+
+        .navbar .left-side {
+            height: inherit;
+            line-height: 80px;
+        }
+        
+        .navbar .center-side ul {
+            list-style: none;
+            width: 400px;
+            display: flex;
+            justify-content: space-between;
+            margin: 0px;
+        }
+
+        .navbar .right-side {
+            font-size: 12px;
+            padding: 5px 15px;
+            border: 1px solid lightgray;
+            border-radius: 20px;
+        }
+
+        .navbar .right-side span {
+            color: #9A30AE;
+        }
+
+    </style>
+</head>
+<body style="width:1500px; margin: auto; margin-top: 50px;">
+
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8 header-top"> 
+            <ul>
+                <li><a href="join.html">회원가입</a>&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;</li>
+                <li><a href="join.html">로그인</a>&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;</li>
+                <li><a href="support.html">고객센터 <i class="fa-solid fa-chevron-down"></i></a></li>
+
+            </ul>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8 header">
+            <div> <img class="main-logo" src="imgs/마켓콜라비로고.png"></div>
+            <div class="input-box"><input type="text" placeholder="검색어를 입력해주세요">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div>
+                <ul>
+                    <li><button><i class="fa-regular fa-bell"></i></button></li>
+                    <li><button><i class="fa-regular fa-heart"></i></button></li>
+                    <li><button><i class="fa-solid fa-cart-shopping"></i></button></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2"></div>
+            <div class="col-sm-8 navbar">
+                <div class="left-side">
+                    <i class="fa-solid fa-bars"></i>&nbsp;&nbsp;
+                    <span>카테고리</span>
+                </div>
+                <div class="center-side">
+                    <ul>
+                        <li><a href="newItems.html">신상품</a></li>
+                        <li><a href="bestItems.html">베스트</a></li>
+                        <li><a href="event.html">이벤트</a></li>
+                    </ul>
+
+                </div>
+                <div class="right-side">
+                    <a> <span>샛별・낮</span> 배송안내</a>
+                </div>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+    
+</body>
+</html>
