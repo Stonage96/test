@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Collabee</title>
+
+    <script src="https://kit.fontawesome.com/ae242928e2.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <link rel="stylesheet" href="foot.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        .category-detail{
+            /* display: block; */
+        }
+        .header-top a, .navbar a{
+            color: black;
+        }
+        .header-top {
+            display: flex; 
+            justify-content: end;
+        }
+
+        .header-top .support, .navbar .left-side .category-button {
+            display: inline-block;
+            position: relative;
+        }
+
+        .header-top .support-detail .navbar .left-side .category-detail {
+            z-index: 1;
+        }
+
+        .navbar .left-side .category-detail .category-list {
+            padding: 0px 10px;
+            height: 50px;
+            line-height: 50px;
+        }
+
+        .navbar .left-side .category-detail {
+            width: 300px;
+            top: 50px;
+            left: -30px;
+            padding: 0px;
+        }
+
+        .navbar .left-side .category-detail ul {
+            list-style: none;
+            padding: 0px;
+        }
+
+        .navbar .left-side .category-detail li {
+            font-size: 14px;
+            margin: 0px;
+            padding: 0px;
+            height: 40px;
+        }
+
+        .navbar img {
+            width: 30px;
+            filter: opacity(0.5) drop-shadow(0 0 0 darkgray);
+            margin-right: 15px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            height: 63px;
+            line-height: 63px;
+        }
+
+        .header .input-box{
+            height: 48px;
+            width: 400px;
+            border-radius: 5px;
+            border: 1px solid #9A30AE;
+            padding-left: 15px;
+            line-height: 48px;
+            position: relative;
+            top: 8px;
+        }
+
+        .header .input-box input{
+            height: 25px;
+            width: 300px;
+            font-size: 16px;
+            position: relative;
+            border: none;
+        }
+
+        .header .input-box i {
+            position: relative;
+            left: 40px;
+            font-size: 20px;
+            color: #9A30AE;
+        }
+
+        .header .main-logo {
+            width: 140px;
+            height: 60px;
+        }
+
+        .header ul {
+            width: 180px;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            font-size: 25px;
+        }
+
+        .header button {
+            background-color: transparent;
+            border: none;
+            
+        }
+
+        .header-top ul{
+            font-size: 13px;
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar {
+            height: 80px;
+        }
+
+        .navbar .left-side {
+            height: inherit;
+            line-height: 80px;
+        }
+
+        
+        .navbar .center-side ul {
+            list-style: none;
+            width: 400px;
+            display: flex;
+            justify-content: space-between;
+            margin: 0px;
+        }
+
+        .navbar .right-side {
+            font-size: 12px;
+            padding: 5px 15px;
+            border: 1px solid lightgray;
+            border-radius: 20px;
+        }
+
+        .navbar .right-side span {
+            color: #9A30AE;
+        }
+
+        .dropdown:hover > div.dropdown-menu { 
+            display:block; margin:0; 
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 300px;
+        }
+
+        .item-block {
+            height: 500px;
+            width: 250px;
+        }
+
+        .carousel-item {
+            width: 100%; height:400px;
+        }
+
+        .card a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .card div{
+            position: relative;
+            border: none;
+        }
+
+        .card img {
+            height: 200px;
+        }
+        .card .icon-cart-box {
+            position: relative;
+            bottom: 60px;
+            left: 170px;
+            opacity: 0.7;
+            background-color: #9A30AE;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 50%;
+            font-size: 20px;
+            z-index:1;
+        }
+
+        .card .icon-cart-box i {
+            color: white;
+        }
+
+        .container {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .col-3 {
+            margin: 0px 10px;
+            width: 230px;
+        }
+
+
+        .carousel-control-prev-icon {
+            position:relative; left:-70px; bottom:100px; 
+            background-color:red; border-radius: 50%; 
+            width: 40px; height: 40px;
+        }
+        .carousel-control-next-icon {
+            position:relative; left:50px; bottom:100px; 
+            background-color:red; border-radius: 50%; 
+            width: 40px; height: 40px;
+        }
+
+    </style>
+</head>
+<body style="width:1500px; margin: auto; margin-top: 50px;">
+
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8 header-top"> 
+            <ul>
+                <li><a href="join.html">회원가입</a>&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;</li>
+                <li><a href="join.html">로그인</a>&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;</li>
+                <li><div class="dropdown support">
+                        고객센터<i class="fa-solid fa-chevron-down"></i>
+                        <div class="dropdown-menu support-detail">
+                        <a class="dropdown-item" href="#">공지사항</a>
+                        <a class="dropdown-item" href="#">자주하는 질문</a>
+                        <a class="dropdown-item" href="#">1:1문의</a>
+                        <a class="dropdown-item" href="#">대량주문 문의</a>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8 header">
+            <div> <img class="main-logo" src="imgs/마켓콜라비로고.png"></div>
+            <div class="input-box"><input type="text" placeholder="검색어를 입력해주세요">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div>
+                <ul>
+                    <li><button><i class="fa-regular fa-bell"></i></button></li>
+                    <li><button><i class="fa-regular fa-heart"></i></button></li>
+                    <li><button><i class="fa-solid fa-cart-shopping"></i></button></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8 navbar">
+            <div class="left-side">
+                <i class="fa-solid fa-bars"></i>&nbsp;&nbsp;
+                <div class="dropdown category-button">
+                    카테고리
+                    <div class="dropdown-menu category-detail">
+                        <div class="list-group overflow-auto">
+                            <a href="newItems.html" class="list-group-item list-group-item-action category-list"><img src="imgs/icons_catetory/채소.png">채소</a>
+                            <a href="bestItems.html" class="list-group-item list-group-item-action category-list"><img src="imgs/icons_catetory/과일,견과,쌀.png">과일・견과・쌀</a>
+                            <a href="event.html" class="list-group-item list-group-item-action category-list"><img src="imgs/icons_catetory/수산,해산물,건어물.png">수산・해산물・건어물</a>
+                            <a href="event.html" class="list-group-item list-group-item-action category-list"><img src="imgs/icons_catetory/정육,계란.png">정육・계란</a>
+                            <a href="event.html" class="list-group-item list-group-item-action category-list"><img src="imgs/icons_catetory/국,반찬,메인요리.png">국・반찬・메인요리</a>
+                            <a href="event.html" class="list-group-item list-group-item-action category-list"><img src="imgs/icons_catetory/샐러드,간편식.png">샐러드・간편식</a>
+                            <a href="event.html" class="list-group-item list-group-item-action category-list"><img src="imgs/icons_catetory/면,양념,오일.png">면・양념・오일</a>
+                            <a href="event.html" class="list-group-item list-group-item-action category-list"><img src="imgs/icons_catetory/생선,음료,우유,커피.png">생선・음료・우유・커피</a>
+                            <a href="event.html" class="list-group-item list-group-item-action category-list"><img src="imgs/icons_catetory/간식,과자,떡.png">간식・과자・떡</a>
+                            <a href="event.html" class="list-group-item list-group-item-action category-list"><img src="imgs/icons_catetory/베이커리,치즈,델리.png">베이커리・치즈・델리</a>
+                            <a href="event.html" class="list-group-item list-group-item-action category-list"><img src="imgs/icons_catetory/건강식품.png">건강식품</a>
+                            <a href="event.html" class="list-group-item list-group-item-action category-list"><img src="imgs/icons_catetory/와인.png">와인</a>
+                            <a href="event.html" class="list-group-item list-group-item-action category-list"><img src="imgs/icons_catetory/전통주.png">전통주</a>
+                            <a href="event.html" class="list-group-item list-group-item-action category-list"><img src="imgs/icons_catetory/생활용품,리빙,캠핑.png">생활용품・리빙・캠핑</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="center-side">
+                <ul>
+                    <li><a href="newItems.html">신상품</a></li>
+                    <li><a href="bestItems.html">베스트</a></li>
+                    <li><a href="event.html">이벤트</a></li>
+                </ul>
+
+            </div>
+            <div class="right-side">
+                <a> <span>샛별・낮</span> 배송안내</a>
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+    
+    <div class="row">    
+        <div class="col-sm-12">
+            <div id="demo" class="carousel slide" data-ride="carousel">
+
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                    <li data-target="#demo" data-slide-to="3"></li>
+                    <li data-target="#demo" data-slide-to="4"></li>
+                    <li data-target="#demo" data-slide-to="5"></li>
+                </ul>
+
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="imgs/carousel/1번.avif" alt="Los Angeles" width="1100" height="500">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imgs/carousel/2번.avif" alt="Chicago" width="1100" height="500">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imgs/carousel/3번.avif" alt="New York" width="1100" height="500">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imgs/carousel/4번.avif" alt="New York" width="1100" height="500">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imgs/carousel/5번.avif" alt="New York" width="1100" height="500">
+                    </div>
+                </div>
+                
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8" style="padding: 0px;">
+            <div style="text-align:center;margin:80px 0px 30px 0px;">
+                <h4 style="font-weight:600;"> 이 상품 어때요? </h4>
+            </div>
+
+            <div class="container text-center my-3" style="padding: 0px;">
+                <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel" data-interval="false">
+                    <div class="carousel-inner w-100" role="listbox">
+                        <div class="carousel-item row no-gutters active">
+                            <div class="col-3 float-left item-block">
+                                <div class="container" style="width: 230px; height: 260px;">
+                                    <div class="card" style="width:inherit; height:inherit;">
+                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image" style="height: 280px;">
+                                        <div class="icon-cart-box-box" style="position:relative; height:0px;">
+                                            <div type="button" data-toggle="modal" data-target="#myModal"class="btn btn-primary icon-cart-box">
+                                                <i class="fa-solid fa-cart-shopping" data-toggle="modal" data-target="#myModal"></i>
+                                            </div>
+                                        </div>
+
+                                        <!-- The Modal -->
+                                        <div class="modal fade" id="myModal">
+                                            <div class="modal-dialog  modal-dialog-centered">
+                                            <div class="modal-content">
+                                            
+                                            <!-- Modal body -->
+                                            <div class="modal-body" style="padding:30px;">
+                                                <h6>한판모둠순대</h6>
+                                                <div class="modal-line" style="display:flex; justify-content: space-between;margin-bottom:30px;">
+                                                    <h5> 4,500원 </h5>
+                                                    <h5> 합계</h5>
+                                                </div>
+                                                <div class="modal-line" style="display:flex; justify-content: space-between;margin-bottom:30px;">
+                                                    <h5> 합계 </h5>
+                                                    <h3> 4,500원</h3>
+                                                </div>
+                                
+                                                <h6>로그인 후, 회원할인가와 적립혜택 제공</h6>
+                                
+                                            </div>
+                                
+                                            <!-- Modal footer -->
+                                            <div class="modal-footer">
+                                            <button type="button" class="btn" data-dismiss="modal" style="background-color: #9A30AE; color: white;">장바구니담기</button>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">취소</button>
+                                            </div>
+                                            
+                                            </div>
+                                        </div>
+                                        </div>
+
+                                        <div class="card-body" style="padding:20px; height: 0px;">
+                                            <h4 class="card-title" style="font-size:14px;">해남 호박고구마 1.5kg</h4>
+                                            <h4 style="font-size:16px; font-weight:750;"> 10,900원</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 float-left item-block">
+                                <div class="container" style="width: 230px; height: 260px;">
+                                    <div class="card" style="width:inherit; height:inherit;">
+                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image" style="height: 280px;">
+                                        <div class="icon-cart-box" style="height: 0px;">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </div>
+                                        <div class="card-body" style="padding:20px; height: 0px;">
+                                            <h4 class="card-title" style="font-size:14px;">해남 호박고구마 1.5kg</h4>
+                                            <h4 style="font-size:16px; font-weight:750;"> 10,900원</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 float-left item-block">
+                                <div class="container" style="width: 230px; height: 260px;">
+                                    <div class="card" style="width:inherit; height:inherit;">
+                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image" style="height: 280px;">
+                                        <div class="icon-cart-box" style="height: 0px;">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </div>
+                                        <div class="card-body" style="padding:20px; height: 0px;">
+                                            <h4 class="card-title" style="font-size:14px;">해남 호박고구마 1.5kg</h4>
+                                            <h4 style="font-size:16px; font-weight:750;"> 10,900원</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 float-left item-block">
+                                <div class="container" style="width: 230px; height: 260px;">
+                                    <div class="card" style="width:inherit; height:inherit;">
+                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image" style="height: 280px;">
+                                        <div class="icon-cart-box" style="height: 0px;">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </div>
+                                        <div class="card-body" style="padding:20px; height: 0px;">
+                                            <h4 class="card-title" style="font-size:14px;">해남 호박고구마 1.5kg</h4>
+                                            <h4 style="font-size:16px; font-weight:750;"> 10,900원</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item row no-gutters">
+                            <div class="col-3 float-left">
+                                <div class="container" style="width: 230px; height: 260px;">
+                                    <div class="card" style="width:inherit; height:inherit;">
+                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image" style="height: 280px;">
+                                        <div class="icon-cart-box" style="height: 0px;">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </div>
+                                        <div class="card-body" style="padding:20px; height: 0px;">
+                                            <h4 class="card-title" style="font-size:14px;">해남 호박고구마 1.5kg</h4>
+                                            <h4 style="font-size:16px; font-weight:750;"> 10,900원</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 float-left item-block">
+                                <div class="container" style="width: 230px; height: 260px;">
+                                    <div class="card" style="width:inherit; height:inherit;">
+                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image" style="height: 280px;">
+                                        <div class="icon-cart-box" style="height: 0px;">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </div>
+                                        <div class="card-body" style="padding:20px; height: 0px;">
+                                            <h4 class="card-title" style="font-size:14px;">해남 호박고구마 1.5kg</h4>
+                                            <h4 style="font-size:16px; font-weight:750;"> 10,900원</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 float-left">
+                                <div class="container" style="width: 230px; height: 260px;">
+                                    <div class="card" style="width:inherit; height:inherit;">
+                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image" style="height: 280px;">
+                                        <div class="icon-cart-box" style="height: 0px;">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </div>
+                                        <div class="card-body" style="padding:20px; height: 0px;">
+                                            <h4 class="card-title" style="font-size:14px;">해남 호박고구마 1.5kg</h4>
+                                            <h4 style="font-size:16px; font-weight:750;"> 10,900원</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 float-left item-block">
+                                <div class="container" style="width: 230px; height: 260px;">
+                                    <div class="card" style="width:inherit; height:inherit;">
+                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image" style="height: 280px;">
+                                        <div class="icon-cart-box" style="height: 0px;">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </div>
+                                        <div class="card-body" style="padding:20px; height: 0px;">
+                                            <h4 class="card-title" style="font-size:14px;">해남 호박고구마 1.5kg</h4>
+                                            <h4 style="font-size:16px; font-weight:750;"> 10,900원</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev test11" href="#recipeCarousel" role="button" data-slide="prev">
+                        <div class="carousel-control-prev-icon" aria-hidden="true" style="position:relative; left:-70px; bottom:60px; background-color:red; border-radius: 50%; width: 40px; height: 40px;"></div>
+                        <div class="sr-only">Previous</div>
+                    </a>
+                    <a class="carousel-control-next test22" href="#recipeCarousel" role="button" data-slide="next">
+                        <div class="carousel-control-next-icon" aria-hidden="true" style="position:relative; right:px; bottom:60px; background-color:red; border-radius: 50%; width: 40px; height: 40px;"></div>
+                        <div class="sr-only">Next</div>
+                    </a>
+                </div>
+            </div>
+
+            <div style="text-align:center;margin:80px 0px 30px 0px;">
+                <h4 style="font-weight:600;"> 냉장고 속 단골 재료! </h4>
+                <h6>어느 요리에나 잘 쓰이는 기본 재료 모음</h6>
+            </div>
+
+            <div class="container text-center my-3" style="padding: 0px;">
+                <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel" data-interval="false">
+                    <div class="carousel-inner w-100" role="listbox">
+                        <div class="carousel-item row no-gutters active">
+                            <div class="col-3 float-left item-block">
+                                <div class="container" style="width: 230px; height: 260px;">
+                                    <div class="card" style="width:inherit; height:inherit;">
+                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image" style="height: 280px;">
+                                        <div class="icon-cart-box" style="height: 0px;">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </div>
+                                        <div class="card-body" style="padding:20px; height: 0px;">
+                                            <h4 class="card-title" style="font-size:14px;">해남 호박고구마 1.5kg</h4>
+                                            <h4 style="font-size:16px; font-weight:750;"> 10,900원</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 float-left item-block">
+                                <div class="container" style="width: 230px; height: 260px;">
+                                    <div class="card" style="width:inherit; height:inherit;">
+                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image" style="height: 280px;">
+                                        <div class="icon-cart-box" style="height: 0px;">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </div>
+                                        <div class="card-body" style="padding:20px; height: 0px;">
+                                            <h4 class="card-title" style="font-size:14px;">해남 호박고구마 1.5kg</h4>
+                                            <h4 style="font-size:16px; font-weight:750;"> 10,900원</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 float-left item-block">
+                                <div class="container" style="width: 230px; height: 260px;">
+                                    <div class="card" style="width:inherit; height:inherit;">
+                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image" style="height: 280px;">
+                                        <div class="icon-cart-box" style="height: 0px;">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </div>
+                                        <div class="card-body" style="padding:20px; height: 0px;">
+                                            <h4 class="card-title" style="font-size:14px;">해남 호박고구마 1.5kg</h4>
+                                            <h4 style="font-size:16px; font-weight:750;"> 10,900원</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 float-left item-block">
+                                <div class="container" style="width: 230px; height: 260px;">
+                                    <div class="card" style="width:inherit; height:inherit;">
+                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image" style="height: 280px;">
+                                        <div class="icon-cart-box" style="height: 0px;">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </div>
+                                        <div class="card-body" style="padding:20px; height: 0px;">
+                                            <h4 class="card-title" style="font-size:14px;">해남 호박고구마 1.5kg</h4>
+                                            <h4 style="font-size:16px; font-weight:750;"> 10,900원</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item row no-gutters">
+                            <div class="col-3 float-left">
+                                <div class="container" style="width: 230px; height: 260px;">
+                                    <div class="card" style="width:inherit; height:inherit;">
+                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image" style="height: 280px;">
+                                        <div class="icon-cart-box" style="height: 0px;">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </div>
+                                        <div class="card-body" style="padding:20px; height: 0px;">
+                                            <h4 class="card-title" style="font-size:14px;">해남 호박고구마 1.5kg</h4>
+                                            <h4 style="font-size:16px; font-weight:750;"> 10,900원</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 float-left item-block">
+                                <div class="container" style="width: 230px; height: 260px;">
+                                    <div class="card" style="width:inherit; height:inherit;">
+                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image" style="height: 280px;">
+                                        <div class="icon-cart-box" style="height: 0px;">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </div>
+                                        <div class="card-body" style="padding:20px; height: 0px;">
+                                            <h4 class="card-title" style="font-size:14px;">해남 호박고구마 1.5kg</h4>
+                                            <h4 style="font-size:16px; font-weight:750;"> 10,900원</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 float-left">
+                                <div class="container" style="width: 230px; height: 260px;">
+                                    <div class="card" style="width:inherit; height:inherit;">
+                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image" style="height: 280px;">
+                                        <div class="icon-cart-box" style="height: 0px;">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </div>
+                                        <div class="card-body" style="padding:20px; height: 0px;">
+                                            <h4 class="card-title" style="font-size:14px;">해남 호박고구마 1.5kg</h4>
+                                            <h4 style="font-size:16px; font-weight:750;"> 10,900원</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 float-left item-block">
+                                <div class="container" style="width: 230px; height: 260px;">
+                                    <div class="card" style="width:inherit; height:inherit;">
+                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image" style="height: 280px;">
+                                        <div class="icon-cart-box" style="height: 0px;">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </div>
+                                        <div class="card-body" style="padding:20px; height: 0px;">
+                                            <h4 class="card-title" style="font-size:14px;">해남 호박고구마 1.5kg</h4>
+                                            <h4 style="font-size:16px; font-weight:750;"> 10,900원</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev test11" href="#recipeCarousel" role="button" data-slide="prev">
+                        <div class="carousel-control-prev-icon" aria-hidden="true" style="position:relative; left:-70px; bottom:60px; background-color:red; border-radius: 50%; width: 40px; height: 40px;"></div>
+                        <div class="sr-only">Previous</div>
+                    </a>
+                    <a class="carousel-control-next test22" href="#recipeCarousel" role="button" data-slide="next">
+                        <div class="carousel-control-next-icon" aria-hidden="true" style="position:relative; right:px; bottom:60px; background-color:red; border-radius: 50%; width: 40px; height: 40px;"></div>
+                        <div class="sr-only">Next</div>
+                    </a>
+                </div>
+            </div>
+            <div style="text-align:center;margin:80px 0px 30px 0px;">
+                <h4 style="font-weight:600;"> 콜라비 추천 상품! </h4>
+                <h6>에디터가 강추합니다~</h6>
+            </div>
+
+            <div class="container text-center my-3" style="padding: 0px;">
+                <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel" data-interval="false">
+                    <div class="carousel-inner w-100" role="listbox">
+                        <div class="carousel-item row no-gutters active">
+                            <div class="col-3 float-left item-block">
+                                <div class="container" style="width: 230px; height: 260px;">
+                                    <div class="card" style="width:inherit; height:inherit;">
+                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image" style="height: 280px;">
+                                        <div class="icon-cart-box" style="height: 0px;">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </div>
+                                        <div class="card-body" style="padding:20px; height: 0px;">
+                                            <h4 class="card-title" style="font-size:14px;">해남 호박고구마 1.5kg</h4>
+                                            <h4 style="font-size:16px; font-weight:750;"> 10,900원</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 float-left item-block">
+                                <div class="container" style="width: 230px; height: 260px;">
+                                    <div class="card" style="width:inherit; height:inherit;">
+                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image" style="height: 280px;">
+                                        <div class="icon-cart-box" style="height: 0px;">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </div>
+                                        <div class="card-body" style="padding:20px; height: 0px;">
+                                            <h4 class="card-title" style="font-size:14px;">해남 호박고구마 1.5kg</h4>
+                                            <h4 style="font-size:16px; font-weight:750;"> 10,900원</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 float-left item-block">
+                                <div class="container" style="width: 230px; height: 260px;">
+                                    <div class="card" style="width:inherit; height:inherit;">
+                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image" style="height: 280px;">
+                                        <div class="icon-cart-box" style="height: 0px;">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </div>
+                                        <div class="card-body" style="padding:20px; height: 0px;">
+                                            <h4 class="card-title" style="font-size:14px;">해남 호박고구마 1.5kg</h4>
+                                            <h4 style="font-size:16px; font-weight:750;"> 10,900원</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 float-left item-block">
+                                <div class="container" style="width: 230px; height: 260px;">
+                                    <div class="card" style="width:inherit; height:inherit;">
+                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image" style="height: 280px;">
+                                        <div class="icon-cart-box" style="height: 0px;">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </div>
+                                        <div class="card-body" style="padding:20px; height: 0px;">
+                                            <h4 class="card-title" style="font-size:14px;">해남 호박고구마 1.5kg</h4>
+                                            <h4 style="font-size:16px; font-weight:750;"> 10,900원</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item row no-gutters">
+                            <div class="col-3 float-left">
+                                <div class="container" style="width: 230px; height: 260px;">
+                                    <div class="card" style="width:inherit; height:inherit;">
+                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image" style="height: 280px;">
+                                        <div class="icon-cart-box" style="height: 0px;">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </div>
+                                        <div class="card-body" style="padding:20px; height: 0px;">
+                                            <h4 class="card-title" style="font-size:14px;">해남 호박고구마 1.5kg</h4>
+                                            <h4 style="font-size:16px; font-weight:750;"> 10,900원</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 float-left item-block">
+                                <div class="container" style="width: 230px; height: 260px;">
+                                    <div class="card" style="width:inherit; height:inherit;">
+                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image" style="height: 280px;">
+                                        <div class="icon-cart-box" style="height: 0px;">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </div>
+                                        <div class="card-body" style="padding:20px; height: 0px;">
+                                            <h4 class="card-title" style="font-size:14px;">해남 호박고구마 1.5kg</h4>
+                                            <h4 style="font-size:16px; font-weight:750;"> 10,900원</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 float-left">
+                                <div class="container" style="width: 230px; height: 260px;">
+                                    <div class="card" style="width:inherit; height:inherit;">
+                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image" style="height: 280px;">
+                                        <div class="icon-cart-box" style="height: 0px;">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </div>
+                                        <div class="card-body" style="padding:20px; height: 0px;">
+                                            <h4 class="card-title" style="font-size:14px;">해남 호박고구마 1.5kg</h4>
+                                            <h4 style="font-size:16px; font-weight:750;"> 10,900원</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 float-left item-block">
+                                <div class="container" style="width: 230px; height: 260px;">
+                                    <div class="card" style="width:inherit; height:inherit;">
+                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image" style="height: 280px;">
+                                        <div class="icon-cart-box" style="height: 0px;">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </div>
+                                        <div class="card-body" style="padding:20px; height: 0px;">
+                                            <h4 class="card-title" style="font-size:14px;">해남 호박고구마 1.5kg</h4>
+                                            <h4 style="font-size:16px; font-weight:750;"> 10,900원</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev test11" href="#recipeCarousel" role="button" data-slide="prev">
+                        <div class="carousel-control-prev-icon" aria-hidden="true" style="position:relative; left:-70px; bottom:60px; background-color:red; border-radius: 50%; width: 40px; height: 40px;"></div>
+                        <div class="sr-only">Previous</div>
+                    </a>
+                    <a class="carousel-control-next test22" href="#recipeCarousel" role="button" data-slide="next">
+                        <div class="carousel-control-next-icon" aria-hidden="true" style="position:relative; right:px; bottom:60px; background-color:red; border-radius: 50%; width: 40px; height: 40px;"></div>
+                        <div class="sr-only">Next</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- footer -->
+    <hr>
+<div class="foot">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+            <div style="font-size:16px; margin-bottom: 15px; font-weight: 600;">
+                고객행복센터
+            </div>
+            <div>
+                <span style="font-size:22px; font-weight: 700;">1644-1107</span> &nbsp; <span style="font-size:13px;">월~토요일 오전 7시 - 오후 6시 </span>
+            </div>
+
+            <div class="inquiry-info">
+                <button>카카오톡 문의</button> <div style="position:relative; bottom: -10px;">월~토요일 | 오전 7시 - 오후 6시 <br> 일/공휴일 | 오전 7시 - 오후 1시</div>
+            </div>
+            <div class="inquiry-info">
+                <button>1:1 문의</button> <div style="position:relative; bottom: -10px;">365일 <br> 고객센터 운영시간에 순차적으로 답변드리겠습니다.</div>
+            </div>
+            <div class="inquiry-info">
+                <button>대량주문 문의</button> <div style="position:relative; bottom: -10px;">월~금요일 | 오전 9시 ~ 오후 6시 <br> 점심시간 | 낮 12시 - 오후 1시</div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="foot-link-list">
+                <ul style="display:flex; justify-content: space-between;">
+                    <li><a href="">컬리소개</a></li>
+                    <li><a href="">컬리소개영상</a></li>
+                    <li><a href="">인재채용</a></li>
+                    <li><a href="">이용약관</a></li>
+                    <li><a href="">개인정보처리방침</a></li>
+                    <li><a href="">이용안내</a></li>
+                </ul>
+            </div>
+
+            <div class="detail-info">
+                법인명(상호):주식회사 콜라비 | 사업자등록번호:261-81-23567 사업자정보확인 <br>
+                통신판매업:제 2018-서울강남-01646호 | 개인정보보호책임자:유석기<br>
+                주소:서울특별시 강남구 테헤란로 124 4층(역삼동) | 대표이사:원윤희<br>
+                입점문의:입점문의하기 | 제휴문의:business@collabee<br>
+                채용문의:recruit@collabee.com<br>
+                팩스:070-7500-6098
+            </div>
+
+            <ul class="sns-icon">
+                <a href="https://www.instagram.com/marketkurly/"><img src="imgs/인스타그램.png"></a>
+                <a href="https://pf.kakao.com/_xcSDxjxl"><img src="imgs/카카오톡.png"></a>
+                <a href="https://m.post.naver.com/marketkurly"><img src="imgs/네이버블로그.png"></a>
+                <a href="https://www.youtube.com/channel/UCfpdjL5pl-1qKT7Xp4UQzQg"><img src="imgs/유튜브.png"></a>
+                <a href="https://ko-kr.facebook.com/marketkurly/"><img src="imgs/페이스북.png"></a>
+
+            </ul>
+
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+</div>
+
+<div class="row" style="margin:20px 0px 40px 0px;">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8" style="padding:0px;"> 
+        <span style="color:gray; font-size: 14px;">비회원 문의:itwill@collabee.com</span> <br>
+        <span style="color:gray; font-size: 14px;">비회원 대량주문 문의:itwill@collabee</span>
+    </div>
+    <div class="col-sm-2"></div>
+</div>
+
+
+
+<div style="font-size:10px; background-color:#E2E2E2; text-align: center; padding:20px 0 40px 0;">
+    콜라비에서 판매되는 상품 중에는 콜라비에 입점한 개별 판매자가 판매하는 마켓플레이스(오픈마켓) 상품이 포함되어 있지 않습니다. <br>
+    마켓플레이스(오픈마켓) 상품은 있다고 할지라도, 콜라비는 통신판매중개자로서 통신판매의 당사자가 아닙니다. 콜라비는 해당 상품의 주문, 품질, 교환/환불 등 의무와 책임을 부담하지 않습니다. <br>
+    <br>
+    <i class="fa-regular fa-copyright"></i> COLLABEE CORP.ALL RIGHTS RESERVED
+</div>
+
+
+
+</body>
+</html>
