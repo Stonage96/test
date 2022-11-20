@@ -5,171 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <title>Collabee</title>
-
-    <script src="https://kit.fontawesome.com/ae242928e2.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <link rel="stylesheet" href="foot.css">
-
+    <script src="https://kit.fontawesome.com/ae242928e2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/header.css">
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <link rel="stylesheet" href="foot.css">
 
     <style>
-        .category-detail{
-            /* display: block; */
-        }
-        .header-top a, .navbar a{
-            color: black;
-        }
-        .header-top {
-            display: flex; 
-            justify-content: end;
-        }
-
-        .header-top .support, .navbar .left-side .category-button {
-            display: inline-block;
-            position: relative;
-        }
-
-        .header-top .support-detail .navbar .left-side .category-detail {
-            z-index: 1;
-        }
-
-        .navbar .left-side .category-detail .category-list {
-            padding: 0px 10px;
-            height: 50px;
-            line-height: 50px;
-        }
-
-        .navbar .left-side .category-detail {
-            width: 300px;
-            top: 50px;
-            left: -30px;
-            padding: 0px;
-        }
-
-        .navbar .left-side .category-detail ul {
-            list-style: none;
-            padding: 0px;
-        }
-
-        .navbar .left-side .category-detail li {
-            font-size: 14px;
+        /* 캐러셀 부분*/
+        .carousel-item-box {
             margin: 0px;
-            padding: 0px;
-            height: 40px;
         }
-
-        .navbar img {
-            width: 30px;
-            filter: opacity(0.5) drop-shadow(0 0 0 darkgray);
-            margin-right: 15px;
-        }
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            height: 63px;
-            line-height: 63px;
-        }
-
-        .header .input-box{
-            height: 48px;
-            width: 400px;
-            border-radius: 5px;
-            border: 1px solid #9A30AE;
-            padding-left: 15px;
-            line-height: 48px;
-            position: relative;
-            top: 8px;
-        }
-
-        .header .input-box input{
-            height: 25px;
-            width: 300px;
-            font-size: 16px;
-            position: relative;
-            border: none;
-        }
-
-        .header .input-box i {
-            position: relative;
-            left: 40px;
-            font-size: 20px;
-            color: #9A30AE;
-        }
-
-        .header .main-logo {
-            width: 140px;
-            height: 60px;
-        }
-
-        .header ul {
-            width: 180px;
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            font-size: 25px;
-        }
-
-        .header button {
-            background-color: transparent;
-            border: none;
-            
-        }
-
-        .header-top ul{
-            font-size: 13px;
-            list-style: none;
-            display: flex;
-        }
-
-        .navbar {
-            height: 80px;
-        }
-
-        .navbar .left-side {
-            height: inherit;
-            line-height: 80px;
-        }
-
         
-        .navbar .center-side ul {
-            list-style: none;
-            width: 400px;
-            display: flex;
-            justify-content: space-between;
-            margin: 0px;
+        .col-3 {
+            margin: 0px 10px;
+            width: 260px;
         }
-
-        .navbar .right-side {
-            font-size: 12px;
-            padding: 5px 15px;
-            border: 1px solid lightgray;
-            border-radius: 20px;
-        }
-
-        .navbar .right-side span {
-            color: #9A30AE;
-        }
-
-        .dropdown:hover > div.dropdown-menu { 
-            display:block; margin:0; 
-        }
-
-        .carousel-item img {
-            width: 100%;
-            height: 300px;
-        }
-
+        
+        
         .item-block {
             height: 500px;
-            width: 250px;
+            width: 260px;
         }
-
+        
+        .card-container {
+            padding: 0px;
+            margin: 0px;
+            width: 100%;
+        }
         .carousel-item {
             width: 100%; height:400px;
+        }
+        
+        .carousel-item img {
+            width: 100%;
+            height: 350px;
+        }
+
+        .card {
+            width: 100%;
+            height:100%;
+
         }
 
         .card a {
@@ -177,59 +58,62 @@
             color: black;
         }
 
-        .card div{
-            position: relative;
-            border: none;
-        }
+        
 
         .card img {
-            height: 200px;
+            width: 260px;
+            height: 350px;
         }
         .card .icon-cart-box {
             position: relative;
-            bottom: 60px;
-            left: 170px;
+            bottom: 70px;
+            left: 90px;
             opacity: 0.7;
             background-color: #9A30AE;
             width: 50px;
             height: 50px;
-            line-height: 50px;
+            line-height: 40px;
             text-align: center;
             border-radius: 50%;
             font-size: 20px;
             z-index:1;
+            border: none;
+        }
+
+        .card .card-body {
+            height: 20%;
         }
 
         .card .icon-cart-box i {
             color: white;
         }
 
-        .container {
-            margin: 0px;
-            padding: 0px;
-        }
-
-        .col-3 {
-            margin: 0px 10px;
-            width: 230px;
-        }
 
 
-        .carousel-control-prev-icon {
-            position:relative; left:-70px; bottom:100px; 
-            background-color:red; border-radius: 50%; 
-            width: 40px; height: 40px;
+        .prev-item-btn {
+            background-color: white; 
+            position: relative; left:-575px; bottom: 240px; 
+            width: 50px; height: 50px; 
+            border:none; border-radius: 50%;
         }
-        .carousel-control-next-icon {
-            position:relative; left:50px; bottom:100px; 
-            background-color:red; border-radius: 50%; 
-            width: 40px; height: 40px;
+        .next-item-btn {
+            background-color: white; 
+            position: relative; left:510px; bottom: 240px; 
+            width: 50px; height: 50px; 
+            border:none; border-radius: 50%;
         }
+
+        .prev-item-btn i, .next-item-btn i {
+            font-size: 24px;
+        }
+
 
     </style>
 </head>
-<body style="width:1500px; margin: auto; margin-top: 50px;">
 
+<body style="width:1800px; margin: auto; margin-top: 50px;">
+
+    <!-- header -->
     <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-8 header-top"> 
@@ -272,11 +156,11 @@
         <div class="col-sm-2"></div>
         <div class="col-sm-8 navbar">
             <div class="left-side">
-                <i class="fa-solid fa-bars"></i>&nbsp;&nbsp;
                 <div class="dropdown category-button">
+                    <i class="fa-solid fa-bars"></i>&nbsp;&nbsp;
                     카테고리
-                    <div class="dropdown-menu category-detail">
-                        <div class="list-group overflow-auto">
+                    <div class="dropdown-menu category-detail  overflow-auto">
+                        <div class="list-group">
                             <a href="newItems.html" class="list-group-item list-group-item-action category-list"><img src="imgs/icons_catetory/채소.png">채소</a>
                             <a href="bestItems.html" class="list-group-item list-group-item-action category-list"><img src="imgs/icons_catetory/과일,견과,쌀.png">과일・견과・쌀</a>
                             <a href="event.html" class="list-group-item list-group-item-action category-list"><img src="imgs/icons_catetory/수산,해산물,건어물.png">수산・해산물・건어물</a>
@@ -362,53 +246,57 @@
             <div style="text-align:center;margin:80px 0px 30px 0px;">
                 <h4 style="font-weight:600;"> 이 상품 어때요? </h4>
             </div>
+            
 
-            <div class="container text-center my-3" style="padding: 0px;">
-                <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel" data-interval="false">
+            <div class="carousel-item-box text-center my-3" style="padding: 0px;">
+                <div id="section1" class="carousel slide w-100" data-ride="carousel" data-interval="false">
                     <div class="carousel-inner w-100" role="listbox">
-                        <div class="carousel-item row no-gutters active">
+                        <div class="carousel-item row no-gutters active justify-content-between">
                             <div class="col-3 float-left item-block">
-                                <div class="container" style="width: 230px; height: 260px;">
-                                    <div class="card" style="width:inherit; height:inherit;">
-                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image" style="height: 280px;">
+                                <div class="card-container">
+                                    <div class="card">
+                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image">
+                                        <div class="card-body">
+                                            <div class="icon-cart-box-box" style="position:relative; height:0px;">
+                                                <div type="button" data-toggle="modal" data-target="#cart-modal"class="btn btn-primary icon-cart-box">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </div>
+                                            </div>
+                                            <h4 class="card-title" style="font-size:14px;">해남 호박고구마 1.5kg</h4>
+                                            <h4 style="font-size:16px; font-weight:750;"> 10,900원</h4>
+                                            <a href="#" class="btn btn-primary stretched-link">See Profile</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 float-left item-block">
+                                <div class="card-container">
+                                    <div class="card">
+                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image">
                                         <div class="icon-cart-box-box" style="position:relative; height:0px;">
-                                            <div type="button" data-toggle="modal" data-target="#myModal"class="btn btn-primary icon-cart-box">
-                                                <i class="fa-solid fa-cart-shopping" data-toggle="modal" data-target="#myModal"></i>
+                                            <div type="button" data-toggle="modal" data-target="#cart-modal"class="btn btn-primary icon-cart-box">
+                                                <i class="fa-solid fa-cart-shopping"></i>
                                             </div>
                                         </div>
 
-                                        <!-- The Modal -->
-                                        <div class="modal fade" id="myModal">
-                                            <div class="modal-dialog  modal-dialog-centered">
-                                            <div class="modal-content">
-                                            
-                                            <!-- Modal body -->
-                                            <div class="modal-body" style="padding:30px;">
-                                                <h6>한판모둠순대</h6>
-                                                <div class="modal-line" style="display:flex; justify-content: space-between;margin-bottom:30px;">
-                                                    <h5> 4,500원 </h5>
-                                                    <h5> 합계</h5>
-                                                </div>
-                                                <div class="modal-line" style="display:flex; justify-content: space-between;margin-bottom:30px;">
-                                                    <h5> 합계 </h5>
-                                                    <h3> 4,500원</h3>
-                                                </div>
-                                
-                                                <h6>로그인 후, 회원할인가와 적립혜택 제공</h6>
-                                
-                                            </div>
-                                
-                                            <!-- Modal footer -->
-                                            <div class="modal-footer">
-                                            <button type="button" class="btn" data-dismiss="modal" style="background-color: #9A30AE; color: white;">장바구니담기</button>
-                                            <button type="button" class="btn btn-danger" data-dismiss="modal">취소</button>
-                                            </div>
-                                            
-                                            </div>
+                                        <div class="card-body">
+                                            <h4 class="card-title" style="font-size:14px;">해남 호박고구마 1.5kg</h4>
+                                            <h4 style="font-size:16px; font-weight:750;"> 10,900원</h4>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 float-left item-block">
+                                <div class="card-container">
+                                    <div class="card">
+                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image">
+                                        <div class="icon-cart-box-box" style="position:relative; height:0px;">
+                                            <div type="button" data-toggle="modal" data-target="#cart-modal"class="btn btn-primary icon-cart-box">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                            </div>
                                         </div>
 
-                                        <div class="card-body" style="padding:20px; height: 0px;">
+                                        <div class="card-body">
                                             <h4 class="card-title" style="font-size:14px;">해남 호박고구마 1.5kg</h4>
                                             <h4 style="font-size:16px; font-weight:750;"> 10,900원</h4>
                                         </div>
@@ -416,41 +304,16 @@
                                 </div>
                             </div>
                             <div class="col-3 float-left item-block">
-                                <div class="container" style="width: 230px; height: 260px;">
-                                    <div class="card" style="width:inherit; height:inherit;">
-                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image" style="height: 280px;">
-                                        <div class="icon-cart-box" style="height: 0px;">
-                                            <i class="fa-solid fa-cart-shopping"></i>
+                                <div class="card-container">
+                                    <div class="card">
+                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image">
+                                        <div class="icon-cart-box-box" style="position:relative; height:0px;">
+                                            <div type="button" data-toggle="modal" data-target="#cart-modal"class="btn btn-primary icon-cart-box">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                            </div>
                                         </div>
-                                        <div class="card-body" style="padding:20px; height: 0px;">
-                                            <h4 class="card-title" style="font-size:14px;">해남 호박고구마 1.5kg</h4>
-                                            <h4 style="font-size:16px; font-weight:750;"> 10,900원</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-3 float-left item-block">
-                                <div class="container" style="width: 230px; height: 260px;">
-                                    <div class="card" style="width:inherit; height:inherit;">
-                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image" style="height: 280px;">
-                                        <div class="icon-cart-box" style="height: 0px;">
-                                            <i class="fa-solid fa-cart-shopping"></i>
-                                        </div>
-                                        <div class="card-body" style="padding:20px; height: 0px;">
-                                            <h4 class="card-title" style="font-size:14px;">해남 호박고구마 1.5kg</h4>
-                                            <h4 style="font-size:16px; font-weight:750;"> 10,900원</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-3 float-left item-block">
-                                <div class="container" style="width: 230px; height: 260px;">
-                                    <div class="card" style="width:inherit; height:inherit;">
-                                        <img class="card-img-top" src="imgs/채소/해남호박고구마.avif" alt="Card image" style="height: 280px;">
-                                        <div class="icon-cart-box" style="height: 0px;">
-                                            <i class="fa-solid fa-cart-shopping"></i>
-                                        </div>
-                                        <div class="card-body" style="padding:20px; height: 0px;">
+
+                                        <div class="card-body">
                                             <h4 class="card-title" style="font-size:14px;">해남 호박고구마 1.5kg</h4>
                                             <h4 style="font-size:16px; font-weight:750;"> 10,900원</h4>
                                         </div>
@@ -517,14 +380,12 @@
                             </div>
                         </div>
                     </div>
-                    <a class="carousel-control-prev test11" href="#recipeCarousel" role="button" data-slide="prev">
-                        <div class="carousel-control-prev-icon" aria-hidden="true" style="position:relative; left:-70px; bottom:60px; background-color:red; border-radius: 50%; width: 40px; height: 40px;"></div>
-                        <div class="sr-only">Previous</div>
-                    </a>
-                    <a class="carousel-control-next test22" href="#recipeCarousel" role="button" data-slide="next">
-                        <div class="carousel-control-next-icon" aria-hidden="true" style="position:relative; right:px; bottom:60px; background-color:red; border-radius: 50%; width: 40px; height: 40px;"></div>
-                        <div class="sr-only">Next</div>
-                    </a>
+                    <button class="prev-item-btn" href="#section1" role="button" data-slide="prev">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button class="next-item-btn" href="#section1" role="button" data-slide="next">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
 
@@ -534,7 +395,7 @@
             </div>
 
             <div class="container text-center my-3" style="padding: 0px;">
-                <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel" data-interval="false">
+                <div id="section2" class="carousel slide w-100" data-ride="carousel" data-interval="false">
                     <div class="carousel-inner w-100" role="listbox">
                         <div class="carousel-item row no-gutters active">
                             <div class="col-3 float-left item-block">
@@ -653,11 +514,11 @@
                             </div>
                         </div>
                     </div>
-                    <a class="carousel-control-prev test11" href="#recipeCarousel" role="button" data-slide="prev">
+                    <a class="carousel-control-prev test11" href="#section2" role="button" data-slide="prev">
                         <div class="carousel-control-prev-icon" aria-hidden="true" style="position:relative; left:-70px; bottom:60px; background-color:red; border-radius: 50%; width: 40px; height: 40px;"></div>
                         <div class="sr-only">Previous</div>
                     </a>
-                    <a class="carousel-control-next test22" href="#recipeCarousel" role="button" data-slide="next">
+                    <a class="carousel-control-next test22" href="#section2" role="button" data-slide="next">
                         <div class="carousel-control-next-icon" aria-hidden="true" style="position:relative; right:px; bottom:60px; background-color:red; border-radius: 50%; width: 40px; height: 40px;"></div>
                         <div class="sr-only">Next</div>
                     </a>
@@ -669,7 +530,7 @@
             </div>
 
             <div class="container text-center my-3" style="padding: 0px;">
-                <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel" data-interval="false">
+                <div id="section3" class="carousel slide w-100" data-ride="carousel" data-interval="false">
                     <div class="carousel-inner w-100" role="listbox">
                         <div class="carousel-item row no-gutters active">
                             <div class="col-3 float-left item-block">
@@ -788,11 +649,11 @@
                             </div>
                         </div>
                     </div>
-                    <a class="carousel-control-prev test11" href="#recipeCarousel" role="button" data-slide="prev">
+                    <a class="carousel-control-prev test11" href="#section3" role="button" data-slide="prev">
                         <div class="carousel-control-prev-icon" aria-hidden="true" style="position:relative; left:-70px; bottom:60px; background-color:red; border-radius: 50%; width: 40px; height: 40px;"></div>
                         <div class="sr-only">Previous</div>
                     </a>
-                    <a class="carousel-control-next test22" href="#recipeCarousel" role="button" data-slide="next">
+                    <a class="carousel-control-next test22" href="#section3" role="button" data-slide="next">
                         <div class="carousel-control-next-icon" aria-hidden="true" style="position:relative; right:px; bottom:60px; background-color:red; border-radius: 50%; width: 40px; height: 40px;"></div>
                         <div class="sr-only">Next</div>
                     </a>
@@ -805,7 +666,37 @@
 
 
 
+    
+    <!-- The Modal -->
+    <div class="modal fade" id="cart-modal">
+        <div class="modal-dialog  modal-dialog-centered">
+        <div class="modal-content">
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="padding:30px;">
+            <h6>한판모둠순대</h6>
+            <div class="modal-line" style="display:flex; justify-content: space-between;margin-bottom:30px;">
+                <h5> 4,500원 </h5>
+                <h5> 합계</h5>
+            </div>
+            <div class="modal-line" style="display:flex; justify-content: space-between;margin-bottom:30px;">
+                <h5> 합계 </h5>
+                <h3> 4,500원</h3>
+            </div>
 
+            <h6>로그인 후, 회원할인가와 적립혜택 제공</h6>
+
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+        <button type="button" class="btn" data-dismiss="modal" style="background-color: #9A30AE; color: white;">장바구니담기</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">취소</button>
+        </div>
+        
+        </div>
+    </div>
+    </div>
 
 
 
